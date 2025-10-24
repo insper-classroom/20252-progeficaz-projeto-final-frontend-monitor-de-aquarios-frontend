@@ -1,0 +1,9 @@
+.filtro {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.filtro input,
+.filtro select {
+  padding: 5px;
+}
