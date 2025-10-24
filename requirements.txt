@@ -1,5 +1,0 @@
-node==>=18.0.0
-npm==>=9.0.0
-vite==latest
-react==latest
-react-dom==latest
