@@ -2,9 +2,45 @@
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 .filtro input,
 .filtro select {
   padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: white;
+
+}
+.filtro option{
+  color: gray ;
+  font-weight: bold;
+}
+.filtro button{
+  color: whitesmoke;
+  background-color: red;
+  border-radius: 5px;
+  font-weight: bold;
+  
+  border: none;
+
+  cursor:pointer;
+
+}
+
+.filtro button:hover {
+  transform: scale(1.10);
+    box-shadow: 0 0 4px rgba(255, 77, 77, 0.5);
+}
+
+.filtro select:hover {
+  border-color: whitesmoke;
+}
+
+.filtro select:focus {
+  outline: none;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 4px rgba(255, 77, 77, 0.5);
 }
