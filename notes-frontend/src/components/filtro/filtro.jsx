@@ -25,7 +25,7 @@ function Filtro({ setAquarios }) {
   };
   
   const andaresPredio = {
-    "" : ["1","2","5"],
+    "" : [],
     "predio_1":["1"],
     "predio_2":["2","5"]
   } //serve para associar os predios aos andares, mudando a opcao conforme o predio selecionado
