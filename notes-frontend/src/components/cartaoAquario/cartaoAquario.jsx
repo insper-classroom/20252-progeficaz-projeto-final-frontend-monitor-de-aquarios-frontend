@@ -16,12 +16,12 @@ function CartaoAquario({ aquario, onUpdate }) {
       <p><strong>Cadeiras:</strong> {aquario.capacidade_cadeiras}</p>
       <p>
         <strong>Status:</strong>{" "}
-        <span className={aquario.ocupado ? "ocupado" : "livre"}>
-          {aquario.ocupado ? "Ocupado" : "Livre"}
+        <span className={aquario.ocupacao ? "ocupado" : "livre"}>
+          {aquario.ocupacao ? "Ocupado" : "Livre"}
         </span>
       </p>
       <button onClick={handleToggle}>
-        {aquario.ocupado ? "Liberar" : "Ocupar"}
+        {aquario.ocupacao ? "Liberar" : "Ocupar"}
       </button>
     </div>
   );
