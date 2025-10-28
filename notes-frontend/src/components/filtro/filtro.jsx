@@ -59,6 +59,7 @@ function Filtro({ setAquarios }) {
       >
         <option value="">Capacidade</option>
         <option value="6">6</option>
+				<option value="8">8</option>
         <option value="10">10</option>
       </select>
       <select name="ocupacao" onChange={handleChange}>
