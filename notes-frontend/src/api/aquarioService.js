@@ -22,7 +22,7 @@ export const getAquariosDisponiveis = async () => {
 
 // atualiza o status de ocupação
 export const updateOcupacao = async (id) => {
-  const response = await axios.put(`${API_BASE_URL}/aquarios/${id}/update_ocupacao`);
+  const response = await axios.put(`${API_BASE_URL}/aquarios/${id}`);
   return response.data;
 };
 
