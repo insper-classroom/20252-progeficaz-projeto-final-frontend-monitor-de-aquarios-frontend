@@ -13,7 +13,7 @@ function CartaoAquario({ aquario, onUpdate }) {
       <h3>{aquario.nome || `Sala ${aquario.id}`}</h3>
       <p><strong>Prédio:</strong> {aquario.predio}</p>
       <p><strong>Andar:</strong> {aquario.andar}</p>
-      <p><strong>Cadeiras:</strong> {aquario.capacidade_cadeiras}</p>
+      <p><strong>Cadeiras:</strong> {aquario.capacidade}</p>
       <p>
         <strong>Status:</strong>{" "}
         <span className={aquario.ocupacao ? "ocupado" : "livre"}>
