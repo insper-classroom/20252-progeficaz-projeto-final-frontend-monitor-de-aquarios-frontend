@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { updateOcupacao } from "../../api/aquarioService";
+import { updateOcupacao, getAquarioPorId } from "../../api/aquarioService";
 import "./botao_aquario.css";
 
 
-function Botao_presenca({ aquario, onUpdate }) {
+function Botao_presenca({ id, onUpdate }) {
+
+		// pegamos o aquario no banco de dados 
+	let aquario = getAquarioPorId(id)
+
+	// quando clicamos no botão de liberar ou ocupar ativamos a const handleToggle que recebe o id do aquario por meio da rota
 	const handleToggle = async () => {
 		await updateOcupacao(aquario.id);
 		onUpdate();
 	};
+
 
 	return (
 		<div className="card">
@@ -28,4 +34,6 @@ function Botao_presenca({ aquario, onUpdate }) {
 	);
 }
 
-export default CartaoAquario;
+export default Botao_presenca;
+
+
