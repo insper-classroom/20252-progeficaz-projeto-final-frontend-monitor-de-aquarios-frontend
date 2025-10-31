@@ -11,7 +11,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-				<Route path="/" element={<bota />}></Route>
+				{/* aqui vamos passar o id do aquario que queremos trocar o status por meio da rota, assim quando acessarmos essa rota pelo qr code vamos entrar na pagina do aquario desejado  */}
+				<Route path="/update_ocupacao/:id" element={<bota />}></Route> 
         <Route index element={<Home />}/>
         </Route>
       </Routes>
