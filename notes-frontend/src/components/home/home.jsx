@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAquarios } from "../../api/aquarioService";
 import CartaoAquario from "../cartaoAquario/cartaoAquario";
 import Filtro from "../filtro/filtro";
+import Erro404 from "../erro404/erro404";
 import "./home.css";
 
 function Home() {
@@ -43,7 +44,7 @@ function Home() {
             />
           ))
         ) : (
-          <p>Nenhuma sala encontrada.</p>
+          <Erro404/>
         )}
       </div>
     </div>
