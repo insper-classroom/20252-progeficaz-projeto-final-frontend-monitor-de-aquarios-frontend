@@ -20,9 +20,6 @@ function CartaoAquario({ aquario, onUpdate }) {
           {aquario.ocupacao ? "Ocupado" : "Livre"}
         </span>
       </p>
-      <button onClick={handleToggle}>
-        {aquario.ocupacao ? "Liberar" : "Ocupar"}
-      </button>
     </div>
   );
 }
