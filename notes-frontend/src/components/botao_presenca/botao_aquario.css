@@ -1,0 +1,85 @@
+/* Card centralizado */
+.card-botao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+}
+
+/* Título e texto */
+.card-botao h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-botao p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Status */
+.ocupado {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.livre {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Botão grande e central */
+.card-botao button {
+  margin-top: 25px;
+  width: 100%;
+  max-width: 350px;
+  padding: 22px 0;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+
+  background-color: #007bff;
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+/* Efeito de clique */
+.card-botao button:active {
+  transform: scale(0.95);
+}
+
+/* Hover (desktop) */
+.card-botao button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .card-botao {
+    margin-top: 80px;
+    padding: 18px;
+  }
+
+  .card-botao button {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 26px 0;
+  }
+}
