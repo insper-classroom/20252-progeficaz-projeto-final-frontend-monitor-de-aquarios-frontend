@@ -41,6 +41,7 @@ function Home() {
               key={aq.id}
               aquario={aq}
               onUpdate={carregarAquarios}
+              
             />
           ))
         ) : (

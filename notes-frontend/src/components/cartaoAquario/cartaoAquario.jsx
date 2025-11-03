@@ -14,12 +14,14 @@ function CartaoAquario({ aquario, onUpdate }) {
       <p><strong>Prédio:</strong> {aquario.predio}</p>
       <p><strong>Andar:</strong> {aquario.andar}</p>
       <p><strong>Cadeiras:</strong> {aquario.capacidade}</p>
+      
       <p>
         <strong>Status:</strong>{" "}
         <span className={aquario.ocupacao ? "ocupado" : "livre"}>
           {aquario.ocupacao ? "Ocupado" : "Livre"}
         </span>
       </p>
+      <a href={`/${aquario.id}`}>Detalhes</a>
     </div>
   );
 }
