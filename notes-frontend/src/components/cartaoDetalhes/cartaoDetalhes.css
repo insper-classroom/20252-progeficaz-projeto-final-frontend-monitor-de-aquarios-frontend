@@ -1,0 +1,110 @@
+.aquario-modal {
+    --text: #111214;
+    --accent: #d33a47;
+    --muted: #6b6f76;
+    --bg: #fff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: var(--text);
+}
+
+
+.aquario-modal .cartao {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(480px, 92%);
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 0 6px 18px rgba(12, 14, 18, 0.06);
+    border: 1px solid rgba(12, 14, 18, 0.04);
+    text-align: center;
+    line-height: 1.35;
+    z-index: 1000;
+}
+
+
+.aquario-modal .cartaoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 8px;
+}
+.aquario-modal .cartaoHeader h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.2px;
+    color: var(--text);
+}
+.aquario-modal .cartaoHeader a {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+    padding: 4px;
+    border-radius: 6px;
+}
+.aquario-modal .cartaoHeader a:hover {
+    background-color: rgba(211, 58, 71, 0.1);
+}
+
+
+.aquario-modal .cartao p {
+    margin: 12px 0;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+.aquario-modal .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.aquario-modal .indisponivel { background: #d50000; }
+.aquario-modal .livre { background: #19a974; }
+
+
+.aquario-modal .botaoNotificacoes {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.aquario-modal .botaoNotificacoes button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid rgba(211, 58, 71, 0.16);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.aquario-modal .botaoNotificacoes button:focus {
+    outline: 3px solid rgba(211, 58, 71, 0.08);
+    outline-offset: 3px;
+}
+
+
+@media (max-width: 420px) {
+    .aquario-modal .cartao { padding: 18px; border-radius: 10px; }
+    .aquario-modal .cartaoHeader h2 { font-size: 18px; }
+    .aquario-modal .cartaoHeader a { width: 32px; height: 32px; top: 10px; left: 10px; font-size: 14px; }
+    .aquario-modal .cartao p { font-size: 14px; }
+    .aquario-modal .botaoNotificacoes button { padding: 7px 12px; }
+}
