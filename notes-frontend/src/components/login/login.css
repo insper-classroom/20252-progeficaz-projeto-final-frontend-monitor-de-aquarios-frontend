@@ -1,0 +1,104 @@
+/* Importa uma fonte mais redondinha e moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Layout geral */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7e7e7; /* fundo cinza mais marcante */
+  font-family: 'Poppins', sans-serif; /* fonte redondinha */
+}
+
+/* Caixa principal do formulário */
+.login-form {
+  background-color: #ffffff;
+  border-radius: 20px; /* bordas mais suaves */
+  padding: 40px;
+  width: 380px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Título */
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #222;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Campos */
+.login-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.login-form input:focus {
+  border-color: #cc0000;
+  box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.1);
+}
+
+/* Mensagem de erro */
+.login-error {
+  color: #b00020;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Botão estilizado */
+.login-submit {
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px; /* bem arredondado */
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.login-submit:hover {
+  background-color: #0052a3;
+  transform: translateY(-2px);
+}
+
+.login-submit:active {
+  transform: translateY(0);
+}
+
+/* Dica ou mensagem no final */
+.login-form p {
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .login-form {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
