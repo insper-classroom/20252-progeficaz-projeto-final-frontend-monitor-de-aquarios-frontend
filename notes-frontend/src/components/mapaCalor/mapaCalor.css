@@ -1,0 +1,25 @@
+.mapa-container {
+  position: relative;
+  width: 800px;
+}
+
+.mapa-img {
+  width: 100%;
+  display: block;
+}
+
+.aquario-overlay {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding-top: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.aquario-overlay:hover {
+  transform: scale(1.1);
+}
