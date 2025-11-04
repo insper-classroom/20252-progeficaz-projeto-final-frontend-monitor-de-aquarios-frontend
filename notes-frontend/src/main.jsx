@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from "react-dom/client"
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import TelaPresenca from './tela_presenca.jsx'
 import Home from "./components/home/home.jsx"
+import HomeLogado from "./components/home/homeLogado.jsx"
 import Detalhes from './detalhes.jsx'
 import Login from './components/login/login.jsx'
 import Register from './components/register/register.jsx'
@@ -15,7 +16,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/cadastro" element={<Register />} />
         <Route path="/update_ocupacao/:id" element={<TelaPresenca />} />
         <Route path="/aquario/:id" element={<Detalhes />} />
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            localStorage.getItem('token') ? <HomeLogado /> : <Home />
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
