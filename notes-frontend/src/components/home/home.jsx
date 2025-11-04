@@ -23,7 +23,7 @@ function Home() {
 
   useEffect(() => {
     carregarAquarios();
-  }, []);
+  }, [aquarios]);
 
   if (carregando) return <p>Carregando aquários...</p>;
 
