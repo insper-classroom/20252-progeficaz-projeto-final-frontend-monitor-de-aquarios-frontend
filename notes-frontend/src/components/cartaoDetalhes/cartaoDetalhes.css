@@ -58,6 +58,24 @@
     background-color: rgba(211, 58, 71, 0.1);
 }
 
+.aquario-modal .cartaoHeader .fechar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    border-radius: 6px;
+}
+.aquario-modal .cartaoHeader .fechar:hover {
+    background-color: rgba(211, 58, 71, 0.1);
+}
+
 
 .aquario-modal .cartao p {
     margin: 12px 0;
@@ -70,7 +88,6 @@
     gap: 8px;
 }
 
-
 .aquario-modal .status-dot {
     width: 10px;
     height: 10px;
@@ -79,7 +96,6 @@
 }
 .aquario-modal .indisponivel { background: #d50000; }
 .aquario-modal .livre { background: #19a974; }
-
 
 .aquario-modal .botaoNotificacoes {
     margin-top: 10px;
@@ -99,7 +115,6 @@
     outline: 3px solid rgba(211, 58, 71, 0.08);
     outline-offset: 3px;
 }
-
 
 @media (max-width: 420px) {
     .aquario-modal .cartao { padding: 18px; border-radius: 10px; }

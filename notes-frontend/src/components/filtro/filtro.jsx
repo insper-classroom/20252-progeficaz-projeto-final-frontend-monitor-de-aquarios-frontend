@@ -29,44 +29,50 @@ function Filtro({ setAquarios }) {
     "Prédio Cláudio Haddad":["0"],
     "Prédio Quatá 200":["2","5"],
 		"Prédio Quatá 67":["1"]
-  } //serve para associar os predios aos andares, mudando a opcao conforme o predio selecionado
+  }
   const andares = andaresPredio[filtros.predio] || [];
 
   return (
     <div className="filtro">
-
+      <div className="filtro-grupo">
+        <label>Prédios</label>
         <select name="predio" onChange={handleChange} value={filtros.predio}>
-        <option value="">Todos</option>
-        <option value="Prédio Cláudio Haddad">Prédio Cláudio Haddad</option>
-        <option value="Prédio Quatá 200">Prédio Quatá 200</option>
-				<option value="Prédio Quatá 67">Prédio Quatá 67</option>
-      </select>
-        <select name="andar" placeholder="Andar" onChange={handleChange}value={filtros.andar}>
-      <option value="">Andares</option>
-    {andares.map((andar) => (
-      <option key={andar} value={andar}>
-        {andar}
-      </option>//opcoes de andares conforme o predio
-    ))}
+          <option value="">Todos</option>
+          <option value="Prédio Cláudio Haddad">Prédio Cláudio Haddad</option>
+          <option value="Prédio Quatá 200">Prédio Quatá 200</option>
+          <option value="Prédio Quatá 67">Prédio Quatá 67</option>
+        </select>
+      </div>
 
-
-      </select>
+      <div className="filtro-grupo">
+        <label>Andares</label>
+        <select name="andar" onChange={handleChange} value={filtros.andar}>
+          <option value="">Todos</option>
+          {andares.map((andar) => (
+            <option key={andar} value={andar}>{andar}</option>
+          ))}
+        </select>
+      </div>
       
-      <select
-        name="capacidade"
-        placeholder="Capacidade"
-        onChange={handleChange}
-      >
-        <option value="">Capacidade</option>
-        <option value="6">6</option>
-				<option value="8">8</option>
-        <option value="10">10</option>
-      </select>
-      <select name="ocupacao" onChange={handleChange}>
-        <option value="">Todos</option>
-        <option value="true">Ocupados</option>
-        <option value="false">Livres</option>
-      </select>
+      <div className="filtro-grupo">
+        <label>Capacidades</label>
+        <select name="capacidade" onChange={handleChange}>
+          <option value="">Todos</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+
+      <div className="filtro-grupo">
+        <label>Ocupação</label>
+        <select name="ocupacao" onChange={handleChange}>
+          <option value="">Todos</option>
+          <option value="true">Ocupados</option>
+          <option value="false">Livres</option>
+        </select>
+      </div>
+
       <button onClick={handleFiltrar}>Filtrar</button>
     </div>
   );

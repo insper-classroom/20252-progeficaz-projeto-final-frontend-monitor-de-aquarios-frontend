@@ -6,28 +6,40 @@ function Botao_presenca({ id }) {
   const [aquario, setAquario] = useState(null);
 
   useEffect(() => {
-		// aqui temos a carcaça padrão onde preenchemos o aquario toda vez que a 
     async function carregarAquario() {
       const data = await getAquarioPorId(id);
       setAquario(data);
     }
     carregarAquario();
-  }, [aquario]); //aquario é passado pois queremos que o elemento atualize toda vez que ele mudar 
-
-	// funcao para trocar o status de ocupacao do aquario de forma assincrona 
+  }, [aquario]); 
   const handleToggle = async () => {
     await updateOcupacao(id);
     const data = await getAquarioPorId(id);
     setAquario(data);
   };
 
-	// se ainda não existir o aquario ele retorna a msg carregando 
-  if (!aquario) return <p>Carregando...</p>;
+  if (!aquario) return (
+    <div className="card-botao">
+      <p>Carregando informações...</p>
+    </div>
+  );
+  const predioStr = aquario.predio !== undefined && aquario.predio !== null ? String(aquario.predio).trim() : "";
+  const idNum = Number(aquario.id);
+
+  const displayAndar = (predioStr === "1" || predioStr === "01") && !Number.isNaN(idNum) && idNum <= 21
+    ? "0"
+    : (aquario.andar ?? "Não informado");
 
   return (
     <div className="card-botao">
       <h3>{aquario.nome || `Sala ${aquario.id}`}</h3>
-      <p>
+      <p className="info-local">
+        <strong>Prédio:</strong> {aquario.predio || "Não informado"}
+      </p>
+      <p className="info-local">
+        <strong>Andar:</strong> {displayAndar}
+      </p>
+      <p className="info-status">
         <strong>Status:</strong>{" "}
         <span className={aquario.ocupacao ? "ocupado" : "livre"}>
           {aquario.ocupacao ? "Ocupado" : "Livre"}

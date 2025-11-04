@@ -21,7 +21,6 @@ export default function Login() {
       if (data?.access_token) {
         localStorage.setItem("access_token", data.access_token);
         localStorage.setItem("user_email", form.email);
-        // Limpa os campos antes de navegar
         setForm({ email: "", password: "" });
         navigate("/");
       } else {
