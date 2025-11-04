@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route
           path="/"
           element={
-            localStorage.getItem('token') ? <HomeLogado /> : <Home />
+            localStorage.getItem('access_token') ? <HomeLogado /> : <Home />
           }
         />
       </Routes>
