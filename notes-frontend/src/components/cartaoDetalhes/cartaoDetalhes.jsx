@@ -4,7 +4,7 @@ import "./cartaoDetalhes.css"
 import { getAquarioPorId, joinWaitlist } from "../../api/aquarioService";
 
 
-const CartaoDetalhes = ({ id }) => {
+const CartaoDetalhes = ({ id, onClose }) => {
     const [aquario, setAquario] = useState(null);
     const [msg, setMsg] = useState("");
     const [loading, setLoading] = useState(false);
