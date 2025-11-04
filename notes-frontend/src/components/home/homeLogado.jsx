@@ -60,7 +60,7 @@ function HomeLogado() {
 
             {Object.entries(andares).map(([andar, salas]) => (
               <div key={andar} className="andar">
-                <h4 className="andar-titulo">{andar}º Andar</h4>
+                <h4 className="andar-titulo">Andar {andar}</h4>
 
                 <div className="bolinhas-container">
                   {salas.map((sala) => (
