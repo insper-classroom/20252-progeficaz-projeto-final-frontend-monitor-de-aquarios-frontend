@@ -1,20 +1,19 @@
 /* Importa uma fonte mais redondinha e moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* Layout geral */
 .login-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e7e7e7; /* fundo cinza mais marcante */
-  font-family: 'Poppins', sans-serif; /* fonte redondinha */
+  background: #e7e7e7;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Caixa principal do formulário */
 .login-form {
   background-color: #ffffff;
-  border-radius: 20px; /* bordas mais suaves */
+  border-radius: 20px;
   padding: 40px;
   width: 380px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
@@ -57,7 +56,6 @@
   box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.1);
 }
 
-/* Mensagem de erro */
 .login-error {
   color: #b00020;
   text-align: center;
@@ -65,12 +63,11 @@
   font-weight: 500;
 }
 
-/* Botão estilizado */
 .login-submit {
-  background-color: #0066cc;
+  background-color: #cc0000;
   color: #ffffff;
   border: none;
-  border-radius: 9999px; /* bem arredondado */
+
   padding: 10px 16px;
   cursor: pointer;
   font-weight: 600;
@@ -79,7 +76,7 @@
 }
 
 .login-submit:hover {
-  background-color: #0052a3;
+  background-color: #b00000;
   transform: translateY(-2px);
 }
 
@@ -87,7 +84,6 @@
   transform: translateY(0);
 }
 
-/* Dica ou mensagem no final */
 .login-form p {
   text-align: center;
   color: #666;
@@ -95,7 +91,6 @@
   margin-top: 12px;
 }
 
-/* Responsivo */
 @media (max-width: 480px) {
   .login-form {
     width: 90%;

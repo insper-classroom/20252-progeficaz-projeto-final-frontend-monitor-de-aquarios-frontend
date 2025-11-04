@@ -1,30 +1,27 @@
 :root {
-  --header-height: 96px; /* ajuste a altura do header aqui, se quiser maior/menor */
+  --header-height: 96px; 
 }
 
-/* remove a margem padrão do browser (evita espaço em cima) */
 html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* header ocupa 100% e fica fixo no topo */
 .header {
-  position: fixed;    /* fixa no topo da janela */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: var(--header-height);
-  background-color: #cc0000; /* vermelho */
+  background-color: #cc0000;
   color: #fff;
   display: flex;
   align-items: center;
-  z-index: 1000;       /* fica acima do resto */
+  z-index: 1000;
   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
 }
 
-/* interior centralizado do header (conteúdo com largura limitada) */
 .header-content {
   width: 100%;
   display: flex;
@@ -33,7 +30,6 @@ html, body {
   padding: 0 24px;
 }
 
-/* logo à esquerda */
 .left {
   width: 200px;
   display: flex;
@@ -44,11 +40,10 @@ html, body {
 .logo {
   height: 28px;
   width: auto;
-  filter: brightness(0) invert(1); /* Torna o logo branco */
+  filter: brightness(0) invert(1); 
   opacity: 0.95;
 }
 
-/* centraliza o título */
 .center {
   flex: 1;
   text-align: center;
@@ -62,7 +57,6 @@ html, body {
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* botão na direita */
 .right {
   width: 200px;
   display: flex;
@@ -73,7 +67,7 @@ html, body {
   background-color: #ffffff;
   color: #000000;
   border: none;
-  border-radius: 4px;
+  border-radius: 9999px;
   padding: 6px 16px;
   font-size: 14px;
   font-weight: 500;
@@ -87,11 +81,13 @@ html, body {
 }
 
 
+
 main, .home, .page-content {
   padding-top: var(--header-height);
 }
 
-/* responsivo: ajusta para telas pequenas */
+
+
 @media (max-width: 768px) {
   :root { 
     --header-height: 72px; 
@@ -120,14 +116,12 @@ main, .home, .page-content {
   .right {
     width: auto;
   }
-  
   .right a {
     padding: 6px 16px;
     font-size: 14px;
   }
 }
 
-/* muito pequeno: esconde título */
 @media (max-width: 480px) {
   .center h1 {
     display: none;

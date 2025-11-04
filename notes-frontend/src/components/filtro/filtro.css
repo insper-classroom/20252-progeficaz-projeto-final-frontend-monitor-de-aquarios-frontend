@@ -1,46 +1,76 @@
 .filtro {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   margin-bottom: 20px;
   justify-content: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 24px;
+  align-items: flex-end;
 }
-.filtro input,
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.filtro-grupo label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
 .filtro select {
-  padding: 5px;
-  font-weight: bold;
-  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 9999px;
   background-color: white;
+  min-width: 120px;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+}
 
+.filtro option {
+  color: #333;
+  padding: 8px;
 }
-.filtro option{
-  color: gray ;
-  font-weight: bold;
-}
-.filtro button{
-  color: whitesmoke;
-  background-color: red;
-  border-radius: 5px;
-  font-weight: bold;
-  
+
+.filtro button {
+  color: white;
+  background-color: #cc0000;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 14px;
   border: none;
-
-  cursor:pointer;
-
+  cursor: pointer;
+  padding: 8px 20px;
+  margin-left: 8px;
+  transition: all 0.2s ease;
 }
 
 .filtro button:hover {
-  transform: scale(1.10);
-    box-shadow: 0 0 4px rgba(255, 77, 77, 0.5);
+  background-color: #b00000;
+  transform: translateY(-1px);
+}
+
+.filtro button:active {
+  transform: translateY(0);
 }
 
 .filtro select:hover {
-  border-color: whitesmoke;
+  border-color: #cc0000;
 }
 
 .filtro select:focus {
   outline: none;
-  border-color: #ff4d4d;
-  box-shadow: 0 0 4px rgba(255, 77, 77, 0.5);
+  border-color: #cc0000;
+  box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.1);
 }

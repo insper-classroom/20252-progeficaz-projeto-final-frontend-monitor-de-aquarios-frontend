@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react'
 import "./cartaoDetalhes.css"
 import { getAquarioPorId } from "../../api/aquarioService";
 
-const CartaoDetalhes = ({ id }) => {
+const CartaoDetalhes = ({ id, onClose }) => {
 
     const [aquario, setAquario] = useState(null);
 
     useEffect(() => {
-        // aqui temos a carcaça padrão onde preenchemos o aquario toda vez que o id mudar
         async function carregarAquario() {
             if (!id) return;
             const data = await getAquarioPorId(id);
@@ -24,7 +23,7 @@ const CartaoDetalhes = ({ id }) => {
         <div className='aquario-modal'>
             <div className="cartao ">
                 <div className='cartaoHeader'>
-                    <a href={`/`}>❌</a>
+                    <button type="button" className="fechar" onClick={() => { if (onClose) onClose(); }} aria-label="Fechar">❌</button>
                     <h2>{aquario.nome} </h2>
                 </div>   
                 <p>📍{aquario.predio} | Andar: {aquario.andar}</p>
