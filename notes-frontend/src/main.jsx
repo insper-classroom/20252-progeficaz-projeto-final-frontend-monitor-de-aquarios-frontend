@@ -1,21 +1,21 @@
 import React from 'react'
 import ReactDOM from "react-dom/client"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from './App.jsx'
 import TelaPresenca from './tela_presenca.jsx'
 import Home from "./components/home/home.jsx"
-import Botao_presenca from './components/botao_presenca/botao_aquario.jsx'
 import Detalhes from './detalhes.jsx'
+import Login from './components/login/login.jsx'
+import Register from './components/register/register.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-				{/* aqui vamos passar o id do aquario que queremos trocar o status por meio da rota, assim quando acessarmos essa rota pelo qr code vamos entrar na pagina do aquario desejado  */}
-				<Route path="/update_ocupacao/:id" element={<TelaPresenca/>}></Route> 
-        <Route path="/:id" element={<Detalhes/>}></Route> 
-				<Route path="/" element={<App />}>
-        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Register />} />
+        <Route path="/update_ocupacao/:id" element={<TelaPresenca />} />
+        <Route path="/aquario/:id" element={<Detalhes />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

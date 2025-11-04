@@ -1,6 +1,143 @@
+:root {
+  --header-height: 96px; /* ajuste a altura do header aqui, se quiser maior/menor */
+}
+
+/* remove a margem padrão do browser (evita espaço em cima) */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header ocupa 100% e fica fixo no topo */
 .header {
-  background-color: #d40000;
+  position: fixed;    /* fixa no topo da janela */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: #cc0000; /* vermelho */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  z-index: 1000;       /* fica acima do resto */
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* interior centralizado do header (conteúdo com largura limitada) */
+.header-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+/* logo à esquerda */
+.left {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.logo {
+  height: 28px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Torna o logo branco */
+  opacity: 0.95;
+}
+
+/* centraliza o título */
+.center {
+  flex: 1;
+  text-align: center;
+}
+
+.center h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
   color: white;
-  padding: 10px 20px;
-  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* botão na direita */
+.right {
+  width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 12px;
+}
+
+.login-button:hover {
+  background-color: #f0f0f0;
+}
+
+
+main, .home, .page-content {
+  padding-top: var(--header-height);
+}
+
+/* responsivo: ajusta para telas pequenas */
+@media (max-width: 768px) {
+  :root { 
+    --header-height: 72px; 
+  }
+  
+  .header-content {
+    padding: 0 16px;
+  }
+  
+  .left {
+    width: auto;
+  }
+  
+  .logo {
+    height: 32px;
+  }
+  
+  .center h1 { 
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  
+  .right {
+    width: auto;
+  }
+  
+  .right a {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+}
+
+/* muito pequeno: esconde título */
+@media (max-width: 480px) {
+  .center h1 {
+    display: none;
+  }
+  
+  .header-content {
+    justify-content: space-between;
+  }
+  
+  .left, .right {
+    flex: none;
+  }
 }
