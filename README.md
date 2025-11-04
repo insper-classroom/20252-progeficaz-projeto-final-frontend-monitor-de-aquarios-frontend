@@ -1,4 +1,4 @@
-# 🐠 Front-end — Monitor de Aquários (Insper)
+# Front-end Monitoramento de Aquários
 
 **Link do deploy (front-end):** [54.236.210.77](http://54.236.210.77)  
 **Documentação completa:** [Google Docs](https://docs.google.com/document/d/1l-EYmFpR5xTyNQxth-VJdnYsd4AgUx7_Ao2qCU-txK0/edit?usp=sharing)
