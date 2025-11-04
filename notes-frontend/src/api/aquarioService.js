@@ -79,3 +79,59 @@ export const filterAquarios = async (params) => {
   const response = await axios.get(`${API_BASE_URL}/aquarios/filter`, { params });
   return response.data.aquarios;
 };
+
+// gerencia os prédios favoritos do usuário
+export const getFavoriteBuildings = () => {
+  const favoritesStr = localStorage.getItem('favoriteBuildings');
+  return favoritesStr ? JSON.parse(favoritesStr) : [];
+};
+
+export const toggleFavoriteBuilding = (predio) => {
+  const favorites = getFavoriteBuildings();
+  const index = favorites.indexOf(predio);
+  
+  if (index === -1) {
+    favorites.push(predio);
+  } else {
+    favorites.splice(index, 1);
+  }
+  
+  localStorage.setItem('favoriteBuildings', JSON.stringify(favorites));
+  return favorites;
+};
+
+export const sortByFavorites = (aquarios) => {
+  const favorites = getFavoriteBuildings();
+  return [...aquarios].sort((a, b) => {
+    const aIsFavorite = favorites.includes(a.predio);
+    const bIsFavorite = favorites.includes(b.predio);
+    if (aIsFavorite === bIsFavorite) return 0;
+    return aIsFavorite ? -1 : 1;
+  });
+};
+
+// adiciona usuário à lista de espera do aquário
+export const joinWaitlist = async (id) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Usuário não está autenticado');
+    }
+    
+    const response = await axios.post(
+      `${API_BASE_URL}/aquarios/${id}/waitlist`,
+      {},
+      {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    );
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      throw new Error(error.response.data.erro || 'Erro ao entrar na lista de espera');
+    }
+    throw error;
+  }
+};

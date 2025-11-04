@@ -16,3 +16,32 @@
   color: green;
   font-weight: bold;
 }
+
+  .card-header {
+    margin-bottom: 10px;
+  }
+
+  .building-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 5px;
+    transition: transform 0.2s;
+    color: #666;
+  }
+
+  .favorite-button:hover {
+    transform: scale(1.1);
+  }
+
+  .favorite-button.favorite-active {
+    color: #ffd700;
+  }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAquarios } from "../../api/aquarioService";
+import { getAquarios, sortByFavorites, getFavoriteBuildings, toggleFavoriteBuilding } from "../../api/aquarioService";
 import Header from "../header/header";
 import Filtro from "../filtro/filtro";
 import CartaoDetalhes from "../cartaoDetalhes/cartaoDetalhes";
@@ -13,7 +13,8 @@ function HomeLogado() {
   const carregarAquarios = async () => {
     try {
       const data = await getAquarios();
-      setAquarios(data);
+        const sortedData = sortByFavorites(data);
+        setAquarios(sortedData);
     } catch (erro) {
       console.error("Erro ao buscar aquários:", erro);
     } finally {
@@ -44,7 +45,18 @@ function HomeLogado() {
       <div className="predios-container">
         {Object.entries(agrupado).map(([predio, andares]) => (
           <div key={predio} className="predio">
-            <h3 className="predio-nome">• {predio}</h3>
+              <div className="predio-header">
+                <h3 className="predio-nome">• {predio}</h3>
+                <button
+                  className={`favorite-building ${getFavoriteBuildings().includes(predio) ? 'favorite-active' : ''}`}
+                  onClick={() => {
+                    toggleFavoriteBuilding(predio);
+                    carregarAquarios();
+                  }}
+                >
+                  {getFavoriteBuildings().includes(predio) ? "★" : "☆"}
+                </button>
+              </div>
 
             {Object.entries(andares).map(([andar, salas]) => (
               <div key={andar} className="andar">
