@@ -26,7 +26,7 @@ function Filtro({ setAquarios }) {
   
   const andaresPredio = {
     "" : [],
-    "Prédio Cláudio Haddad":["térreo"],
+    "Prédio Cláudio Haddad":["0"],
     "Prédio Quatá 200":["2","5"],
 		"Prédio Quatá 67":["1"]
   }
