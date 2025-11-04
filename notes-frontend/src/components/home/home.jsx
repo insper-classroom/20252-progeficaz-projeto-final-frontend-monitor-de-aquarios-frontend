@@ -25,7 +25,7 @@ function Home() {
     carregarAquarios();
   }, []);
 
-  if (carregando) return <p>Carregando aquários...</p>;
+  if (carregando) return <p className="loading-message">Carregando aquários...</p>;
 
   const agrupado = aquarios.reduce((acc, a) => {
     if (!acc[a.predio]) acc[a.predio] = {};
@@ -37,7 +37,6 @@ function Home() {
   return (
     <div className="home">
       <Header />
-      <h2 className="titulo">Aquários</h2>
 
       <Filtro setAquarios={setAquarios} />
 
@@ -48,8 +47,7 @@ function Home() {
 
             {Object.entries(andares).map(([andar, salas]) => (
               <div key={andar} className="andar">
-                <h4 className="andar-titulo">{andar}º Andar</h4>
-
+                <h4 className="andar-titulo">Andar {andar} </h4>
                 <div className="bolinhas-container">
                   {salas.map((sala) => (
                     <button

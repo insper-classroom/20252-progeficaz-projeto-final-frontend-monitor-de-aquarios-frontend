@@ -1,15 +1,17 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Botao_presenca from './components/botao_presenca/botao_aquario.jsx'
+import Botao_presenca from './components/botao_presenca/botao_aquario.jsx';
+import "./tela_presenca.css";
 
 function Tela_presenca() {
-  const { id } = useParams(); // pega o ID da rota
+  const { id } = useParams();
 
   return (
-    <div>
-      <h2>Tela de Presença</h2>
-			{/* passamos o id para o botao presenca para que ele faça a busca no banco com a api */}
-      <Botao_presenca id={id} />
+    <div className="tela-presenca">
+      <div className="tela-presenca-content">
+        <h2 className="titulo-ocupacao">Ocupação do Aquário</h2>
+        <Botao_presenca id={id} />
+      </div>
     </div>
   );
 }

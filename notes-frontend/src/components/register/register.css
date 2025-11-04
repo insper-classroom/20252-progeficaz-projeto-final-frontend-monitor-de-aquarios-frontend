@@ -51,12 +51,12 @@
 
 .register-form label input:focus {
   outline: none;
-  border-color: #0066cc;
-  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+  border-color: #cc0000;
+  box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.1);
 }
 
 .register-submit {
-  background-color: #0066cc;
+  background-color: #cc0000;
   color: #ffffff;
   border: none;
   border-radius: 9999px;
@@ -69,7 +69,7 @@
 }
 
 .register-submit:hover {
-  background-color: #0052a3;
+  background-color: #b00000;
   transform: translateY(-2px);
 }
 
