@@ -26,7 +26,7 @@ export default function Register() {
       // Limpa os campos do formulário
       setForm({ username: "", email: "", password: "" });
       setTimeout(() => {
-        navigate("/login");
+        navigate("/");
       }, 1500); // Aumentei um pouco o tempo para dar para ler a mensagem de sucesso
     } catch (err) {
       setError(err.message || "Erro ao cadastrar.");
