@@ -1,6 +1,6 @@
 import axios from "axios"; // ferramenta utilizada no handout!!!
 
-const API_BASE_URL = "52.87.254.97";  // endereço padrão
+const API_BASE_URL = "http://52.87.254.97";  // endereço padrão
 
 // função de registro
 export const register = async (username, email, password) => {
